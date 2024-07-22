@@ -4,7 +4,6 @@ const express = require('express');
 const app = express();
 const mongo = require('mongoose');
 const bodyParser = require('body-parser');
-const port = process.env.port || 11000;
 const user = require('./router/user');
 const admin = require('./router/admin');
 const path = require("path");
@@ -40,4 +39,4 @@ app.get('*', (req, res) => {
 
 // ----------------SERVER CONNECTION---------------------
 
-app.listen(port, () => console.log("Server Created !!"));
+app.listen(11000, () => console.log("Server Created !!"));
