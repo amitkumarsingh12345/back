@@ -17,7 +17,7 @@ app.use(cors());
 
 const createdb = () => {
    try {
-      mongoose.connect('mongodb+srv://Amitkumarsingh:amit1234@cluster0.qwqh5tl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+      mongoose.connect('mongodb+srv://amitkumarsingh1482:amit1234@e-com-db.efnjtkl.mongodb.net/testdb');
       console.log("Connectiuon Success!!");
    } catch(error) {
       console.log(`Connection Error: ${error}`);
