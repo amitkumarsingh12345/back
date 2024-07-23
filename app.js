@@ -15,7 +15,7 @@ app.use(cors());
 
 // ----------------DATABASE CONNECTION---------------------
 
-mongo.connect("mongodb+srv://amitkumarsingh1482:amit1234@divya123.fkj6pj9.mongodb.net/?retryWrites=true&w=majority&appName=Divya123").
+mongo.connect("mongodb+srv://Amitkumarsingh:amit1234@testdb.gk0sdgg.mongodb.net/test").
   then( () => console.log("Database Created!!"));
 
 app.use(bodyParser.json());
