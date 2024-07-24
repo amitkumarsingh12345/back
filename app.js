@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const mongo = require('mongoose');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const user = require('./router/user');
 const admin = require('./router/admin');
@@ -17,8 +17,8 @@ app.use(cors());
 
 const createdb = () => {
    try {
-      mongoose.connect('mongodb+srv://amitkumarsingh1482:amit1234@e-com-db.efnjtkl.mongodb.net/testdb');
-      console.log("Connectiuon Success!!");
+      mongoose.connect('mongodb+srv://amitkumarsingh1482:amit1234@first-c.2z2tzps.mongodb.net/db').then(() => console.log("DB Connected!!")).
+      catch((err) => console.log({ "Error": err }));
    } catch(error) {
       console.log(`Connection Error: ${error}`);
    } 
