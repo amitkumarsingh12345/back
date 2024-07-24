@@ -8,9 +8,7 @@ const jwtKey = "@divya";
 
 const createAdminAcount = async (req, res) => {
     const { name, password } = req.body;
-    const hashPassword = bcrypt.hashSync(password);
-
-    await new admin({ name, password: hashPassword }).save().
+    await new admin({ name, password }).save().
         then(() => res.status(200).send({ "Massage": "User Acount Created !!!" })).
         catch((err) => res.status(401).send(err))
 };
