@@ -15,7 +15,7 @@ const deleteFile = async filePath => {
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '../frontcode/public/')
+        cb(null, '../back/frontcode/public/')
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
@@ -97,7 +97,7 @@ const productSearch = async (req, res) => {
 
 const productDelete = async (req, res) => {
     await product.findOne({ _id: req.params.id }, { _id: 0, image: 1 }).
-        then((data) => deleteFile(`../frontcode/public/${data.image}`)).
+        then((data) => deleteFile(`../back/frontcode/public/${data.image}`)).
         catch((error) => console.log(""));
 
     await product.deleteOne({ _id: req.params.id }).
@@ -109,7 +109,7 @@ const productDelete = async (req, res) => {
 
 const productUpdate = (multer({ storage: storage }), async (req, res) => {
     await product.findOne({ _id: req.params.id }, { _id: 0, image: 1 }).
-        then((data) => typeof (req.file?.originalname) == 'string' && req.file?.originalname != data.image ? deleteFile(`../frontcode/public/${data.image}`) : "").
+        then((data) => typeof (req.file?.originalname) == 'string' && req.file?.originalname != data.image ? deleteFile(`../back/frontcode/public/${data.image}`) : "").
         catch((error) => console.log(error));
     await product.updateOne(
         { _id: req.params.id },
